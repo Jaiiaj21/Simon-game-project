@@ -11,26 +11,29 @@ html {
 .title {
     font-family: 'Pangolin', cursive;
     font-family: 'Permanent Marker', cursive;
-    font-size: 70px;
+    font-size: 3.5em;
 }
 .title h1 {
     margin: 0;
 }
 h2 {
     font-family: 'Kalam', cursive;
-    font-size: 70px;
+    font-size: 3em;
+    margin: 20px;
+    margin-bottom:30px;
 }
 .container {
     width: 100%;
-    height: 750px;
+    max-height: 750px;
     display: flex;
     justify-content: center;
+    margin-bottom: 40px ;
 }
 .circle-container {
     position: relative;
     border-radius: 50%;
-    width: 700px;
-    height: 700px;
+    width: 600px;
+    height: 600px;
     background-color: black;
 }
 #play-button {
@@ -38,61 +41,49 @@ h2 {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    border: 25px solid black;
     background-color: white;
     cursor: pointer;
 }
 #red {
     position: absolute;
-    width: 325px;
-    height: 325px;
+    width: 262.5px;
+    height: 262.5px;
     top: 25px;
     left: 25px;
-    border-radius: 100% 0 0 0 ;
-    background-color: red;
     cursor: pointer;
-    border-bottom: 12.5px solid black;
-    border-right: 12.5px solid black;
 }
 #blue {
     position: absolute;
-    width: 325px;
-    height: 325px;
+    width: 262.5px;
+    height: 262.5px;
     top: 25px;
     right: 25px;
-    border-radius: 0 100% 0 0 ;
-    background-color: blue;
     cursor: pointer;
-    border-bottom: 12.5px solid black;
-    border-left: 12.5px solid black;
 }
 #green {
     position: absolute;
-    width: 325px;
-    height: 325px;
+    width: 262.5px;
+    height: 262.5px;
     bottom: 25px;
-    right: 25px;
-    border-radius: 0 0 100% 0 ;
-    background-color: green;
+    left: 25px;
     cursor: pointer;
-    border-top: 12.5px solid black;
-    border-left: 12.5px solid black;
 }
 #yellow {
     position: absolute;
-    width: 325px;
-    height: 325px;
+    width: 262.5px;
+    height: 262.5px;
     bottom: 25px;
-    left: 25px;
-    border-radius: 0 0 0 100% ;
-    background-color: yellow;
+    right: 25px;
     cursor: pointer;
-    border-top: 12.5px solid black;
-    border-right: 12.5px solid black;
 }
+
+/* filter: drop-shadow(2px 0px 2px white) drop-shadow(0px 2px 2px white) drop-shadow(-2px -0px 2px white) drop-shadow(-0px -2px 2px white); */
+
+
+
 footer {
     height: 200px;
 }
