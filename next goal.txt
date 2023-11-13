@@ -1,0 +1,8 @@
+i want to do more next time.
+  - .clicked and .lightUp upgrade them more beautiful
+  - rescale circle-container for every browser
+  - add page that give user pick the sound for 4 button and apply it to their button
+  - use white button show start and game-over
+  - design new game-over css
+  - adjust sound;-;
+
