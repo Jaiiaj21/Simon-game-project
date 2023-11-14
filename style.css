@@ -3,6 +3,7 @@
 
 html {
     background: linear-gradient(to left top, #f5c764, #64bde6);
+    height: 100%;
 }
 body {
     text-align: center;

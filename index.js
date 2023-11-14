@@ -3,10 +3,12 @@ let gamePattern = [];
 let userClickedPattern = [];
 let level = 0;
 let started = false;
+let userAllowClick = false; // do not allow user click while show pattern colour.
+
 
 // step 1 Create a new pattern.
 function nextSequence() {
-
+    userAllowClick = false;
     let randomNumber = Math.floor(Math.random() * 4);
     let randomChosenColour = buttonColours[randomNumber];
     gamePattern.push(randomChosenColour);
@@ -21,6 +23,8 @@ function nextSequence() {
     $(".level-title h2").text("level " + level);
     // reset userClickesPattern for new level
     userClickedPattern = [];
+    userAllowClick = true; // End show colour pattern phrase, allow user to click.
+
 
 }
 
@@ -39,7 +43,7 @@ function animatePattern(currentColour){
 // step 3 Check which button is pressed.
 for(let i = 0; i < buttonColours.length; i++){
     $("#" + buttonColours[i]).click(function (){
-        if(started){
+        if(started && userAllowClick){ // Do not allow click same button many times.
             let userChosenColour = buttonColours[i];
             userClickedPattern.push(userChosenColour);
             // console.log(userClickedPattern);
@@ -64,6 +68,7 @@ function animatePress(currentColour){
 $("#white").click(function() {
     // play sound and animation when user click start game.
     if(!started){
+        started = true; // Do not allow user click start button many times.
         // do not allow white button to detect want user click
         setTimeout(function() {
             playSound("start");
@@ -84,10 +89,13 @@ function checkAnswer(currentLevel) {
     // user success this current level
     if(gamePattern[currentLevel] === userClickedPattern[currentLevel]){
         // success this level
+        userAllowClick = false;
         if(currentLevel + 1 === level){
             setTimeout(function() {
                 nextSequence();
             }, 1000);
+        }else{
+            userAllowClick = true;
         }
     }else{
         gameOver();
@@ -110,4 +118,5 @@ function startOver() {
     level = 0;
     gamePattern = [];
     started = false;
+    userAllowClick = false;
 }
