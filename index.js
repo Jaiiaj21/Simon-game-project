@@ -6,12 +6,16 @@ let started = false;
 
 // step 1 Create a new pattern.
 function nextSequence() {
+
     let randomNumber = Math.floor(Math.random() * 4);
     let randomChosenColour = buttonColours[randomNumber];
     gamePattern.push(randomChosenColour);
     // from step 2 add sounds for new pattern button.
-    animatePattern(randomChosenColour);
-    playSound(randomChosenColour);
+    setTimeout(function() {
+        animatePattern(randomChosenColour);
+        playSound(randomChosenColour);
+    },100);
+    started = true;
     // increase level by 1 and change level-title up to now.
     level++;
     $(".level-title h2").text("level " + level);
@@ -60,14 +64,16 @@ function animatePress(currentColour){
 $("#white").click(function() {
     // play sound and animation when user click start game.
     if(!started){
-        playSound("start");
-        animatePress("white");
+        // do not allow white button to detect want user click
         setTimeout(function() {
-            $(".level-title h2").text("Level " + level);
+            playSound("start");
+            animatePress("white");
+        },100);
+        setTimeout(function() {
             nextSequence();
+            $(".level-title h2").text("level " + level);
         }, 1000);
         // show first pattern.
-        started = !started;
     }
 });
 

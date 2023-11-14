@@ -6,7 +6,6 @@ html {
 }
 body {
     text-align: center;
-    height: 99vh;
 }
 .title {
     font-family: 'Pangolin', cursive;
@@ -88,7 +87,7 @@ span {
 }
 
 footer {
-    height: 200px;
+    height: 20px;
 }
 
 .clicked {
