@@ -104,9 +104,9 @@ function checkAnswer(currentLevel) {
 
 // step 7 Game over.
 function gameOver() {
-    $("body").addClass("game-over");
+    $("html").addClass("game-over");
     setTimeout(function() {
-        $("body").removeClass("game-over");
+        $("html").removeClass("game-over");
     }, 150);
     playSound("wrong");
     $(".level-title").html("<h2>Game over, press <span>white</span> button to restart</h2>");

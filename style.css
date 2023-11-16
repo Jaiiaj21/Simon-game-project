@@ -100,8 +100,7 @@ footer {
 }
 
 .game-over {
-    background-color: rgb(255, 103, 103);
-    opacity: 0.8;
+    background: linear-gradient(to left top, #f56464, rgb(255, 255, 255));
 }
 
 
